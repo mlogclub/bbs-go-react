@@ -1,0 +1,15 @@
+.table-row-dragging {
+  background: #dbeeff;
+  border: 1px dashed #1890ff;
+  .table-row-dragging-hidden {
+    display: none;
+  }
+}
+
+.table-row-dragging td {
+  padding: 16px;
+}
+
+.table-row-dragging .drag-visible {
+  visibility: visible;
+}

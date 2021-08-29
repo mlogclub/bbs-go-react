@@ -1,0 +1,19 @@
+.dashboardCard {
+}
+
+.systemItem {
+  display: flex;
+
+  p + p {
+    margin-top: 8px;
+  }
+
+  span {
+    flex: 1;
+  }
+  strong {
+    width: 100px;
+    text-align: right;
+    padding-right: 12px;
+  }
+}

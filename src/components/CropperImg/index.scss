@@ -1,0 +1,33 @@
+.cropper-img-wrap {
+  display: flex;
+
+  .cropper-img-box {
+    width: calc(100% - 160px);
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .cropper-preview-box {
+    margin-left: 20px;
+    .preview {
+      overflow: hidden;
+    }
+
+    .preview + .preview {
+      margin-top: 15px;
+    }
+    .preview-lg {
+      width: 140px;
+      height: 140px;
+    }
+    .preview-md {
+      width: 100px;
+      height: 100px;
+    }
+    .preview-sm {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

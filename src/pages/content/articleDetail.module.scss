@@ -1,0 +1,19 @@
+.userMeta {
+  & > span {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .username {
+    font-weight: bold;
+  }
+
+  :global {
+    .ant-avatar-string {
+      font-size: 14px;
+    }
+  }
+}
+.title {
+  text-align: center;
+}

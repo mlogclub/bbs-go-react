@@ -1,0 +1,68 @@
+// 搜索列表通用
+
+.search-from {
+  margin-bottom: 15px;
+
+  .ant-picker {
+    width: 100%;
+  }
+  .ant-form {
+    // margin-bottom: -24px;
+  }
+}
+
+.search-btn-group {
+  display: flex;
+
+  .ant-btn {
+    svg,
+    span {
+      font-size: inherit;
+      vertical-align: middle;
+    }
+  }
+
+  * + .ant-btn {
+    margin-left: 20px;
+  }
+}
+
+.action-btn-group {
+  @extend .search-btn-group;
+  .ant-btn-text,
+  .ant-btn-link {
+    padding: 0;
+  }
+}
+
+.page-post-from {
+  .post-header {
+    margin-bottom: 15px;
+  }
+
+  .post-header-tools {
+    text-align: right;
+  }
+
+  .post-tools {
+    .ant-btn + .ant-btn {
+      margin-left: 20px;
+    }
+  }
+
+  .ant-input-number {
+    width: 100%;
+  }
+
+  &.ant-card {
+    .ant-card-body {
+      padding: 0;
+    }
+  }
+}
+
+.table-action-btns {
+  .ant-btn + .ant-btn {
+    margin-left: 8px;
+  }
+}

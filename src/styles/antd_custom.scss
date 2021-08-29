@@ -1,0 +1,45 @@
+// antd rewrite
+.ant-input,
+.ant-btn {
+  transition-duration: 0.2s;
+}
+$green: #41cc07;
+$warn: #fa8c16;
+// 绿色，成功
+.btn-green {
+  &.ant-btn:not(.ant-btn-link) {
+    background-color: $green;
+    border-color: $green;
+    color: #fff;
+  }
+
+  &.ant-btn-link {
+    color: $green;
+  }
+}
+
+// 警告
+.warn-btn {
+  &.ant-btn:not(.ant-btn-link) {
+    background-color: #fff;
+    border-color: $warn;
+    color: $warn;
+  }
+
+  &.ant-btn-link {
+    color: $warn;
+  }
+
+  &.ant-btn-primary:not(.ant-btn-link) {
+    background-color: $warn;
+    border-color: $warn;
+    color: #fff;
+  }
+}
+
+// table 强制换行
+.my-table {
+  .ant-table-cell {
+    word-break: break-all;
+  }
+}

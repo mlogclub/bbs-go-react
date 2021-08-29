@@ -1,0 +1,41 @@
+.configCard {
+  min-height: 280px;
+  margin-bottom: 18px;
+  .configItem {
+    margin-bottom: 6px;
+
+    .configVal {
+      padding: 5px;
+    }
+
+    :global {
+      .anticon {
+        color: #1890ff;
+      }
+    }
+  }
+
+  :global {
+    .ant-btn-text:hover,
+    .ant-btn-text:focus {
+      background-color: rgba(0, 0, 0, 0.085);
+    }
+  }
+}
+
+.draggingWrap {
+  :global {
+    .ant-table-cell:nth-child(1) {
+      width: 50px;
+    }
+    .ant-table-cell:nth-child(2) {
+      width: 80px;
+    }
+  }
+}
+
+.notice {
+  a {
+    color: #1890ff;
+  }
+}

@@ -1,0 +1,12 @@
+.dm-upload {
+  .ant-upload-list-picture-card-container {
+    transition: none;
+    animation-duration: 0s;
+  }
+}
+.dm-upload-crop-modal,
+.dm-upload-preview-modal {
+  .preview-img {
+    max-width: 100%;
+  }
+}

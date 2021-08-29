@@ -1,0 +1,14 @@
+.veditorWrap {
+  :global {
+    .vditor {
+      border: none;
+    }
+
+    .vditor-ir pre.vditor-reset {
+      padding: 12px;
+      &:focus {
+        background-color: #fff;
+      }
+    }
+  }
+}

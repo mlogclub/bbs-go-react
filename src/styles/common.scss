@@ -1,0 +1,98 @@
+@import './page_search.scss';
+@import './antd_custom.scss';
+@import './drag_table.scss';
+
+// TODO:通用css
+// 尺寸 10px 15px 20px
+$commmn-size: 10 15 20;
+// padding padding-bottom padding-top margin margin-bottom margin-top
+$style-attr: p pb pt m mb mt;
+
+@mixin attr-x($name, $attrs, $val) {
+  .#{$name}-#{$val} {
+    #{$attrs}: #{$val}px;
+  }
+}
+
+@each $var in $commmn-size {
+  @include attr-x('m', 'margin', $var);
+  @include attr-x('mb', 'margin-bottom', $var);
+  @include attr-x('mt', 'margin-top', $var);
+  @include attr-x('p', 'padding', $var);
+  @include attr-x('pb', 'padding-bottom', $var);
+  @include attr-x('pt', 'padding-top', $var);
+}
+
+// router loading
+.route-loading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  line-height: 100vh;
+}
+
+.page-loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(#fff, $alpha: 0.35);
+  svg {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.page-card-wrap {
+  padding: 18px;
+  background-color: #fff;
+}
+
+// flex
+.flex {
+  display: flex;
+}
+.flex-ac {
+  @extend .flex;
+  align-items: center;
+}
+
+.flex-jc {
+  @extend .flex;
+  justify-content: center;
+}
+
+.flex-ajc {
+  @extend .flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//  文本超出 隐藏
+.hidden-one {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//
+.max-img {
+  max-width: 100%;
+}
+
+// 超链接
+.link {
+  color: #1890ff;
+}
+
+//
+.txt-wrap {
+  word-break: break-all;
+}

@@ -1,0 +1,34 @@
+.topicImgs {
+  padding-top: 10px;
+  img {
+    max-width: 120px;
+  }
+}
+
+.topicMetaInfo {
+  span {
+    margin-right: 5px;
+  }
+}
+
+.topicToolBtns {
+  text-align: right;
+
+  :global {
+    .ant-btn {
+      margin-left: 5px;
+    }
+  }
+}
+
+.topicTitle {
+  .topicUserId {
+    font-size: 13px;
+    color: #666;
+  }
+  :global {
+    .ant-tag {
+      margin-left: 6px;
+    }
+  }
+}
