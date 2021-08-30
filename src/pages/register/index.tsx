@@ -68,7 +68,7 @@ const Register = (props: IProps) => {
   const getCaptchaImg = () => {
     getCaptcha().then(res => {
       const { code, data } = res.data;
-      if (code == 1) {
+      if (code === 1) {
         setCaptchaImg(data);
       }
     });

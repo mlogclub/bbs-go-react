@@ -1,4 +1,4 @@
-import { Input, Modal, Form, message } from 'antd';
+import { Input, Modal, Form } from 'antd';
 import { ModalProps } from 'antd/es/modal';
 // import { addConfig, updateConfig } from '@/services/siteConfig';
 import { PostModalProps } from '@/utils/form';

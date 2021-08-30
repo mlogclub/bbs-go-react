@@ -20,7 +20,7 @@ const CropperImage = (props: CropperImageProps) => {
   };
 
   const handleConfirm = () => {
-    const img = cropperRef.current?.getCroppedCanvas().toBlob(data => {
+    cropperRef.current?.getCroppedCanvas().toBlob(data => {
       console.log(data);
     });
   };

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Spin, Modal, Tabs, Input, Upload } from 'antd';
 import Vditor from 'vditor';
-import { UploadOutlined } from '@ant-design/icons';
 import 'vditor/src/assets/scss/index.scss';
 import css from './index.module.scss';
 

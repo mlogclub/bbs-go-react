@@ -1,7 +1,6 @@
-import { useLayoutEffect, FC, ReactElement, ReactNode } from 'react';
+import { useLayoutEffect, FC, ReactNode } from 'react';
 import { Redirect } from 'react-router-dom';
-import { inject, observer } from 'mobx-react';
-import { useRouteMatch } from 'react-router-dom';
+import { inject } from 'mobx-react';
 import { storeInstance } from '@/store';
 
 type IProps = {
