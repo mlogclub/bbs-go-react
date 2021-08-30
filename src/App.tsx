@@ -8,7 +8,6 @@ import Layout from '@/layouts';
 import noAuthMenus from '@/router/index';
 import routerHistory from '@/utils/history';
 import './App.scss';
-
 moment.locale('zh-cn');
 
 function App() {
