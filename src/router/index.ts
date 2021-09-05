@@ -35,7 +35,7 @@ const noAuthMenus: RouteItem[] = [
   {
     name: 'github-登录页',
     exact: true,
-    path: '/login/github',
+    path: '/user/github/callback',
     component: Loader(() => import('@/pages/login/third/github')),
   },
   {

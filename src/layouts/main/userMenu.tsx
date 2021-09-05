@@ -11,7 +11,7 @@ const UserMenu = () => {
   const { userStore } = rootStore;
   const { loginLoading, pageLoading, user } = userStore;
   const history = useHistory();
-  const hnadleLogout = () => {
+  const handleLogout = () => {
     setMenuVisible(false);
     Modal.confirm({
       content: '确定要退出？',
@@ -69,7 +69,7 @@ const UserMenu = () => {
             <Link to={`/authmanage/user/detail/${user?.id}`}>个人信息</Link>
           </span>
         </Menu.Item>
-        <Menu.Item key="logout" onClick={hnadleLogout}>
+        <Menu.Item key="logout" onClick={handleLogout}>
           <LogoutOutlined />
           <span>退出登录</span>
         </Menu.Item>

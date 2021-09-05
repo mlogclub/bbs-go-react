@@ -3,10 +3,9 @@ import { Input, Button, message, Divider, Form, Row, Col } from 'antd';
 import { inject, useObserver, observer } from 'mobx-react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { StoreProps } from '@/store';
-import { getCaptcha } from '@/services/user';
+import { getCaptcha, githubLoginAuth } from '@/services/user';
 import { GithubFilled, UserOutlined, LockOutlined, SafetyOutlined } from '@ant-design/icons';
-import { randomString, query } from '@/utils/util';
-import { githubAuthUrl } from '@/utils/github';
+import { query } from '@/utils/util';
 
 import css from './index.module.scss';
 
@@ -24,7 +23,6 @@ const Login = (props: IProps) => {
   const history = useHistory();
   const location = useLocation<{ from: string }>();
   const [captchImg, setCaptchaImg] = useState<CaptchImg>();
-  const [stateStr, setStateStr] = useState<string>('');
 
   const [form] = Form.useForm();
 
@@ -65,10 +63,20 @@ const Login = (props: IProps) => {
         message.error({ content: err?.statusText || '获取验证码失败' });
       });
   };
+  // 获取GitHub授权链接
+  const handleGitubAuth = () => {
+    githubLoginAuth().then(res => {
+      const { success, data, message } = res.data;
+      if (success) {
+        window.location.href = data.url;
+      } else {
+        message.error({ content: message });
+      }
+    });
+  };
 
   useEffect(() => {
     getCaptchaImg();
-    setStateStr(randomString());
   }, []);
 
   const loginLoading = useObserver(() => userStore.loginLoading);
@@ -107,7 +115,7 @@ const Login = (props: IProps) => {
             第三方登录
           </Divider>
           <div className={css.thirdLogin}>
-            <a href={githubAuthUrl(stateStr)} rel="noopener noreferrer">
+            <a rel="noopener noreferrer" onClick={handleGitubAuth}>
               <GithubFilled />
             </a>
           </div>

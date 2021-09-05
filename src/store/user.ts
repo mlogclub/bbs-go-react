@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction, action } from 'mobx';
-import { login, register, getCurrent, logout } from '@/services/user';
+import { login, register, getCurrent, logout, githubLogin } from '@/services/user';
 import { setToken, removeToken, getToken } from '@/utils/storage';
 
 interface UserDetail {
@@ -79,25 +79,34 @@ class UserData {
       });
   }
 
-  @action
+  githubLogin(data: any) {
+    return githubLogin(data).then(res => {
+      const {
+        data: { success, data },
+      } = res;
+      if (success) {
+        this.setUserData(data);
+      }
+      return res.data;
+    });
+  }
+
   setUserData(data) {
     this.user = data.user;
     this.token = data.token;
     setToken(data.token);
   }
 
-  @action
   clearUserData() {
     this.token = '';
     this.user = undefined;
     removeToken();
   }
 
-  @action
   logout() {
     return logout().then(res => {
-      const { code } = res.data;
-      if (code === 1) {
+      const { success } = res.data;
+      if (success) {
         this.clearUserData();
       }
       return res.data;

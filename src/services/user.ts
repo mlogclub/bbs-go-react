@@ -18,7 +18,7 @@ export const login = (data?: any) => post('/api/login/signin', data);
 export const register = (data?: any) => post('/api/sign/up', data);
 
 // 退出登录
-export const logout = () => get('/api/sign/out');
+export const logout = () => get('/api/login/signout');
 
 // 获取当前登录用户
 export const getCurrent = () => get('/api/user/current');
@@ -27,4 +27,13 @@ export const getCurrent = () => get('/api/user/current');
 export const getCaptcha = (data?: any) => get<any>('/api/captcha/request', data);
 
 // github Login
-export const githubLogin = (data?: any) => post<any>('/api/sign/github', data);
+export const githubLoginAuth = (data?: any) => get<any>('/api/github/login/authorize', data);
+
+/**
+ * github 登录
+ * @param data
+ * @param { string }  data.code
+ * @param { string }  data.state
+ * @returns
+ */
+export const githubLogin = (data?: any) => get<any>('/api/github/login/callback', { params: data });
